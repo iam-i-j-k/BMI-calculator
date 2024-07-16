@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Varela+Round&display=swap');
+
+        *{
+    font-family: 'Varela Round';
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #83B4FF;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 350px;
+    height: 60vh;
+    margin: 120px 100px 0px 100px;
+    padding: 20px;
+    box-shadow: 5px 2px 1px #4535C1;
+}
+
+.box button{
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    width: 60%;
+    padding: 10px;
+    letter-spacing: 0.5px;
+    background-color: snow;
+    box-shadow: 5px 2px 1px #4535C1;
+    cursor: pointer;
+}
+
+.box button:hover{
+    color: snow;
+    background-color: #4535C1;
+}
+.box h1{
+    font-size: 30px;
+}
+
+input{
+    border: none;
+    background-color: #83B4FF;
+    border-bottom: 1px solid #4535C1;
+    outline: none;
+    width: 50%;
+    padding: 0px 10px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 720px){
+    .box{
+        height: 50vh;
+        width: 200px;
+    }
+    
+}
+
+
+    </style>
+    <link href="CSS/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    
+    <div class="box">
+        <br>
+        <h1>BMI Calculator</h1>
+        <br>
+        <p>Enter your height(in cm):</p>
+        <br>    
+        <input type="number" name="height" id="height">
+        <br>
+        <p>Enter your Weight(in kg):</p>
+        <br>
+        <input type="number" name="weight" id="weight">
+        <br>
+        <button id="btn">Calculate</button>
+        <br>
+        <p>Your BMI is</p>
+        <div id="result">
+            
+        </div>
+    </div>
+    
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.querySelector('#btn');
+            button.addEventListener('click', calculateBMI);
+        });
+
+        function calculateBMI() {
+            console.log('clicked');
+            const height = document.querySelector('#height').value;
+            const weight = document.querySelector('#weight').value;
+            const result = document.querySelector('#result');
+
+            if (isNaN(height) || height <= 0) {
+                result.innerHTML = "<p>Please provide a valid Height</p>";
+                return;
+            } else if (isNaN(weight) || weight <= 0) {
+                result.innerHTML = "<p>Please provide a valid Weight</p>";
+                return;
+            }
+
+            const heightInMeters = height / 100;
+            const BMI = (weight / (heightInMeters * heightInMeters)).toFixed(2);
+
+            if (BMI < 18.5) {
+                result.innerHTML = `<p>Under Weight: ${BMI}</p>`;
+            } else if (BMI >= 18.5 && BMI <= 24.9) {
+                result.innerHTML = `<p>Normal: ${BMI}</p>`;
+            } else if (BMI > 24.9) {
+                result.innerHTML = `<p>Over Weight: ${BMI}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
