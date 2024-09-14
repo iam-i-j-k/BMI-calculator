@@ -6,7 +6,7 @@
 }
 
 body{
-    background: #83B4FF;
+    background: #D2E0FB;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -19,12 +19,13 @@ body{
     flex-direction: column;
     align-items: center;
     overflow: auto;
-    border: 1px solid black;
     border-radius: 20px;
+    color: #000;
     width: 350px;
+    background-color: #E6D9A2;
     margin: 120px 100px 0px 100px;
     padding: 20px;
-    box-shadow: 5px 2px 1px #4535C1;
+    box-shadow: 0px 10px 20px #000000;
 }
 
 .box button{
@@ -35,13 +36,12 @@ body{
     padding: 10px;
     letter-spacing: 0.5px;
     background-color: snow;
-    box-shadow: 5px 2px 1px #4535C1;
     cursor: pointer;
 }
 
-.box button:hover{
+.box button:focus{
     color: snow;
-    background-color: #4535C1;
+    background-color: #000000;
 }
 .box h1{
     font-size: 30px;
@@ -60,7 +60,6 @@ input{
 @media only screen and (max-height: 620px){
  .box{
     overflow: auto;
-    scroll-bar-width: none;
     margin-bottom: 100px
   }
 }
@@ -72,6 +71,5 @@ input{
   }
 }
  
-
 
 
