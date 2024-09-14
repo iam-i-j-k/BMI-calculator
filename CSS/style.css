@@ -1,12 +1,12 @@
 *{
     font-family: 'Varela Round';
-    font-size: 18px;
+    font-size: 1rem;
     margin: 0;
     padding: 0;
 }
 
 body{
-    background: #D2E0FB;
+    background: linear-gradient(to right, pink, rgb(161, 123, 196));
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@ body{
     border-radius: 20px;
     color: #000;
     width: 350px;
-    background-color: #E6D9A2;
+    background-color: #6482AD;
     margin: 120px 100px 0px 100px;
     padding: 20px;
     box-shadow: 0px 10px 20px #000000;
