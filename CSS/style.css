@@ -6,7 +6,7 @@
 }
 
 body{
-    background: linear-gradient(to right, pink, rgb(161, 123, 196));
+    background: linear-gradient(to right, rgb(255, 192, 203), rgb(161, 123, 196));
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -70,6 +70,3 @@ input{
     width: 200px;
   }
 }
- 
-
-
